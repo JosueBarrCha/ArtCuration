@@ -1,11 +1,11 @@
 const reels = [
   {
-    url: "https://www.instagram.com/reel/DTJ_fewj2iW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
-    comentario: "Peace"
+    url: "https://www.instagram.com/reel/DUz1PW5DvqK/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
+    comentario: "Uso interesante del ritmo visual y la edición."
   },
   {
-    url: "https://www.instagram.com/reel/DUz1PW5DvqK/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
-    comentario: "My wife says I can't have the hat."
+    url: "https://www.instagram.com/reel/DTJ_fewj2iW/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
+    comentario: "Gran manejo de iluminación y narrativa."
   }
 ];
 
@@ -17,13 +17,16 @@ reels.forEach(reel => {
 
   card.innerHTML = `
     <blockquote 
-      class="instagram-media" 
-      data-instgrm-permalink="${reel.url}" 
-      data-instgrm-version="14"
-      style="background:#FFF; border:0; margin:0; padding:0;">
+      class="instagram-media"
+      data-instgrm-permalink="${reel.url}"
+      data-instgrm-version="14">
     </blockquote>
-    <p>${reel.comentario}</p>
+    <div class="comentario">${reel.comentario}</div>
   `;
 
   grid.appendChild(card);
 });
+
+if (window.instgrm) {
+  window.instgrm.Embeds.process();
+}

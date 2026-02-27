@@ -2,33 +2,56 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
 }
 
 body {
-  background: #0f0f0f;
-  color: white;
-  padding: 40px;
+  background: #0e0e0e;
+  color: #f2f2f2;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  padding: 60px 20px;
 }
 
 header {
-  margin-bottom: 40px;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+header p {
+  opacity: 0.6;
+  font-size: 16px;
 }
 
 .grid {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 50px 40px;
 }
 
 .card {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.card p {
-  margin-top: 15px;
-  font-size: 14px;
-  opacity: 0.8;
+.card blockquote {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+.comentario {
+  font-size: 15px;
+  opacity: 0.75;
+  padding-left: 4px;
+  border-left: 2px solid #333;
 }
