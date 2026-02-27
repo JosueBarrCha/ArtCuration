@@ -8,80 +8,85 @@ body {
   background: #0c0c0c;
   color: #eaeaea;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
   padding: 80px 20px;
 }
 
 header {
-  max-width: 900px;
-  margin: 0 auto 70px auto;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 header h1 {
-  font-size: 44px;
-  font-weight: 600;
-  letter-spacing: -1px;
-  margin-bottom: 12px;
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
 header p {
   opacity: 0.5;
 }
 
-.controls {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.controls button {
-  background: transparent;
-  color: #aaa;
-  border: 1px solid #333;
-  padding: 8px 16px;
-  margin: 5px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.controls button:hover {
-  background: #1a1a1a;
-  color: #fff;
-}
-
 .grid {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 60px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+.thumbnail {
+  position: relative;
+  cursor: pointer;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.25s ease;
 }
 
-.card.hidden {
-  opacity: 0;
-  pointer-events: none;
+.thumbnail:hover {
+  transform: scale(1.03);
+}
+
+.thumbnail img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
   position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  font-size: 14px;
 }
 
-.meta {
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  opacity: 0.4;
+/* Modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  z-index: 1000;
 }
 
-.comentario {
-  font-size: 15px;
-  opacity: 0.8;
-  border-left: 2px solid #333;
-  padding-left: 10px;
+.modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 24px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+#close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
 }
